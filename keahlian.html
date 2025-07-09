@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <title>Keahlian</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/0377da5831.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+    <div class="topbar-left">
+    <p><strong>Isnin - Sabtu:</strong> 9:00 - 18:00 | <strong>Jumaat:</strong> 12:00 - 14:45</p>
+    </div>
+    <div class="topbar-right">
+    <a href="https://www.facebook.com/" target="_blank">📘</a>
+    <a href="https://www.youtube.com/" target="_blank">▶</a>
+    </div>
+</div> 
+
+<header>
+    <div class="header-flex">
+    <img src="images/logo-libPerlis.png" alt="Logo 1" class="header-img">
+    <h1>Perpustakaan Awam Arau</h1>
+    <img src="images/logo-right-2.png" alt="Logo 2" class="header-img">
+    </div>
+</header>
+
+<nav>
+    <ul>
+    <li><a href="index.html">Laman Utama</a></li>
+    <li class="dropdown">
+        <a href="#">Info Korporat ▾</a>
+        <ul class="dropdown-content">
+        <li><a href="perutusan.html">Perutusan Pengarah</a></li>
+        <li><a href="visimisi.html">Visi & Misi</a></li>
+        <li><a href="carta.html">Carta Organisasi</a></li>
+        <li><a href="piagam.html">Piagam Pelanggan</a></li>
+        <li><a href="sejarah.html">Sejarah</a></li>
+        <li><a href="objektif.html">Objektif & Fungsi</a></li>
+        </ul>
+    </li>
+
+    <li class="dropdown">
+        <a href="#">Perkhidmatan ▾</a>
+        <ul class="dropdown-content">
+        <li><a href="keahlian.html">Keahlian</a></li>
+        <li><a href="pinjaman.html">Pinjaman Buku</a></li>
+        <li><a href="rujukan.html">Perkhidmatan Rujukan</a></li>
+        <li><a href="internet.html">Internet & ICT</a></li>
+        </ul>
+    </li>
+    <li><a href="contact.html">Hubungi Kami</a></li>
+    </ul>
+</nav>
+
+<div class="content">
+    <h2>Keahlian</h2>
+    <p>Ingin menjadi keahlian perpustakaan ?</p>
+    <div id="contact">
+<div class="container">
+    <div class="row">
+    <div class="contact-left">
+        <h1 class="sub-title">Daftar Ahli</h1>
+        <p><i class="fa-solid fa-paper-plane"></i>contact@example.com</p>
+        <p><i class="fa-solid fa-phone"></i>013245678</p>
+        <div class="social-icons">
+        <a href="https://facebook.com"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#"><i class="fa-brands fa-twitter-square"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+    </div>
+</div>
+<div class="contact-right">
+                <form name="submit-to-google-sheet">
+                <input type="text" name="Name" placeholder="Your Name" required />
+                <input type="email" name="Email" placeholder="Your Email" required />
+                <input type="tel" name="Phone" placeholder="Your Phone Number" required />
+                <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                <button type="submit" class="btn btn2">Submit</button>
+                <span id="msg"></span></form>
+</div>
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbw3GdV-FqI0RFBzYvCRhQ_TLz0wHxsHJ5p4THVX7Z5wzjws5A5bSkolar2X0nJ_-C1fHA/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+
+    form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message sent successfully"
+            setTimeout(function(){
+                msg.innerHTML = ""
+            },5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+</script>
+
+<div class="footer-widgets">
+    <div class="widget">
+    <h4>Ikuti Kami</h4>
+    <p>📘 <a href="#">Facebook</a></p>
+    <p>▶ <a href="#">YouTube</a></p>
+    <p>📷 <a href="#">Instagram</a></p>
+    </div>
+
+    <div class="widget">
+    <h4>Hubungi Kami</h4>
+    <p>📍 Jalan Besar Arau, 02600 Arau, Perlis</p>
+    <p>📞 04-9876543</p>
+    <p>📧 info@perpustakaanarau.my</p>
+    </div>
+
+    <div class="widget">
+    <h4>Pautan Pantas</h4>
+    <p><a href="index.html">Laman Utama</a></p>
+    <p><a href="perutusan.html">Perutusan Pengarah</a></p>
+    <p><a href="contact.html">Hubungi Kami</a></p>
+    <p><a href="FAQ.html">Soalan Lazim</a></p>
+    </div>
+</div>
+
+<footer><p>&copy; 2025 Perpustakaan Awam Arau.</p></footer>
+</body>
+</html>
